@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Static Website Plans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        primaryHover: '#4338ca',
+                        secondary: '#0f172a',
+                        accent: '#10b981',
+                        warning: '#f59e0b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-indigo-400;
+            }
+        }
+        .accordion-content {
+            transition: max-height 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-700 bg-slate-50 antialiased pt-20">
+
+    <!-- Sticky Navbar -->
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-leaf text-[#447a46] text-3xl"></i>
+                    <a href="#" class="font-display font-bold text-2xl text-[#0f172a]">Truegridelaf</a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#features" class="text-slate-600 hover:text-primary font-medium transition-colors">Features</a>
+                    <a href="#pricing" class="text-slate-600 hover:text-primary font-medium transition-colors">Pricing</a>
+                    <a href="#terms" class="text-slate-600 hover:text-primary font-medium transition-colors">Terms</a>
+                    <a href="#contact" class="bg-primary hover:bg-primaryHover text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100 shadow-xl absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#features" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-indigo-50 hover:text-primary rounded-md">Features</a>
+                <a href="#pricing" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-indigo-50 hover:text-primary rounded-md">Pricing</a>
+                <a href="#terms" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-indigo-50 hover:text-primary rounded-md">Terms</a>
+                <a href="#contact" class="block mt-4 text-center bg-primary hover:bg-primaryHover text-white px-6 py-3 rounded-xl font-semibold transition-colors shadow-md">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-gradient-to-br from-indigo-50 via-white to-indigo-100 pt-16 pb-20 md:pt-24 md:pb-32 lg:pt-32 lg:pb-40 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-secondary leading-tight mb-6">
+                Fast, Secure & Fully Managed<br>
+                <span class="text-gradient">Static Website Plans</span>
+            </h1>
+            <p class="mt-4 max-w-3xl mx-auto text-lg sm:text-xl text-slate-600 mb-10">
+                Bina tension ke apna business online le jayein — Domain, hosting, security aur SEO sab kuch included. Aap sirf requirement bataiye, baaki humari responsibility.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#pricing" class="w-full sm:w-auto bg-primary hover:bg-primaryHover text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_4px_14px_rgba(79,70,229,0.4)] hover:shadow-[0_6px_20px_rgba(79,70,229,0.6)] hover:-translate-y-1">
+                    View Pricing <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+                <a href="#features" class="w-full sm:w-auto bg-white border-2 border-slate-200 hover:border-primary text-slate-700 hover:text-primary px-8 py-4 rounded-full font-bold text-lg transition-all">
+                    Explore Features
+                </a>
+            </div>
+        </div>
+        
+        <!-- Decorative blob -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-indigo-200/50 blur-3xl opacity-50 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-200/50 blur-3xl opacity-50 pointer-events-none"></div>
+    </header>
+
+    <!-- Features -->
+    <section id="features" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-4">Har Plan Mein Ye Sab Milega ✨</h2>
+                <p class="text-lg text-slate-500">Premium features standard ke roop mein, bina kisi extra chhupe hue kharch ke.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Feature Card -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group">
+                    <div class="w-16 h-16 bg-indigo-100 text-primary rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-secondary mb-3">Fully Responsive</h3>
+                    <p class="text-slate-600">Mobile, Tablet & Desktop friendly website.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group">
+                    <div class="w-16 h-16 bg-indigo-100 text-primary rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-secondary mb-3">1 Free Domain</h3>
+                    <p class="text-slate-600">.shop / .online / .space / .sbs / .com / .in / .co.in</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group">
+                    <div class="w-16 h-16 bg-indigo-100 text-primary rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-secondary mb-3">Unlimited Hosting</h3>
+                    <p class="text-slate-600">Netlify/Vercel par fast loading speed & 99.9% uptime.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group">
+                    <div class="w-16 h-16 bg-indigo-100 text-primary rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-secondary mb-3">Free SSL</h3>
+                    <p class="text-slate-600">HTTPS secure browsing and data protection.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group">
+                    <div class="w-16 h-16 bg-indigo-100 text-primary rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-secondary mb-3">On-Page SEO</h3>
+                    <p class="text-slate-600">Google rank ke liye fully ready technical setup.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group">
+                    <div class="w-16 h-16 bg-indigo-100 text-primary rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-secondary mb-3">Contact Form</h3>
+                    <p class="text-slate-600">Working form, direct aapke email pe enquiries.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group">
+                    <div class="w-16 h-16 bg-indigo-100 text-primary rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-secondary mb-3">Analytics Setup</h3>
+                    <p class="text-slate-600">Google Search Console & Analytics integration.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group">
+                    <div class="w-16 h-16 bg-indigo-100 text-primary rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-secondary mb-3">Premium Support</h3>
+                    <p class="text-slate-600">Direct WhatsApp/Email support & monitoring.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updates -->
+    <section class="py-16 md:py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-secondary mb-4">Content Updates (Bina Extra Charge) 🔄</h2>
+                <p class="text-lg text-slate-500">Ek update request me content change karne mein maximum 24-48 hours lagte hain.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 text-center shadow-sm">
+                    <h4 class="text-slate-500 font-medium mb-2 text-lg">Monthly Plan</h4>
+                    <p class="font-display text-4xl font-bold text-secondary">2 <span class="text-xl text-slate-400 font-medium">Updates</span></p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 text-center shadow-sm">
+                    <h4 class="text-slate-500 font-medium mb-2 text-lg">Quarterly Plan</h4>
+                    <p class="font-display text-4xl font-bold text-secondary">6 <span class="text-xl text-slate-400 font-medium">Updates</span></p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 text-center shadow-sm">
+                    <h4 class="text-slate-500 font-medium mb-2 text-lg">Half-Yearly Plan</h4>
+                    <p class="font-display text-4xl font-bold text-secondary">15 <span class="text-xl text-slate-400 font-medium">Updates</span></p>
+                </div>
+                <div class="bg-gradient-to-br from-primary to-indigo-500 p-8 rounded-2xl text-center shadow-lg text-white">
+                    <h4 class="text-indigo-100 font-medium mb-2 text-lg">Yearly Plan</h4>
+                    <p class="font-display text-4xl font-bold">Unlimited</p>
+                    <p class="text-indigo-200 mt-1">Small Updates</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display text-3xl md:text-5xl font-bold text-secondary mb-4">Pricing Plans – Clear Savings 💰</h2>
+                <p class="text-lg text-slate-500">Apne budget aur requirement ke hisaab se best plan select karein.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-sm md:max-w-none mx-auto">
+                
+                <!-- Monthly -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col relative">
+                    <div class="text-center border-b border-slate-100 pb-8 mb-8">
+                        <h3 class="text-xl font-semibold text-slate-600 mb-2">Monthly</h3>
+                        <div class="flex items-baseline justify-center gap-1">
+                            <span class="text-4xl font-display font-extrabold text-secondary">₹1,499</span>
+                            <span class="text-slate-500 font-medium">/mo</span>
+                        </div>
+                        <p class="text-primary font-medium mt-2">1 Month</p>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <span>Total Amount: ₹1,499</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <span>2 Content Updates</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <span>Standard Support</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold transition-colors">Choose Plan</a>
+                </div>
+
+                <!-- Quarterly -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col relative">
+                    <div class="text-center border-b border-slate-100 pb-8 mb-8">
+                        <h3 class="text-xl font-semibold text-slate-600 mb-2">Quarterly</h3>
+                        <div class="flex items-baseline justify-center gap-1">
+                            <span class="text-4xl font-display font-extrabold text-secondary">₹1,333</span>
+                            <span class="text-slate-500 font-medium">/mo</span>
+                        </div>
+                        <p class="text-primary font-medium mt-2">3 Months</p>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <span>Total Amount: <strong class="text-secondary">₹3,999</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <span>6 Content Updates</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-bolt text-accent mt-1"></i>
+                            <span><strong class="text-secondary">Aapki Bachat: ₹498</strong> (~11%)</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold transition-colors">Choose Plan</a>
+                </div>
+
+                <!-- Half-Yearly -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col relative">
+                    <div class="text-center border-b border-slate-100 pb-8 mb-8">
+                        <h3 class="text-xl font-semibold text-slate-600 mb-2">Half-Yearly</h3>
+                        <div class="flex items-baseline justify-center gap-1">
+                            <span class="text-4xl font-display font-extrabold text-secondary">₹1,250</span>
+                            <span class="text-slate-500 font-medium">/mo</span>
+                        </div>
+                        <p class="text-primary font-medium mt-2">6 Months</p>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <span>Total Amount: <strong class="text-secondary">₹7,499</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <span>15 Content Updates</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-bolt text-accent mt-1"></i>
+                            <span><strong class="text-secondary">Aapki Bachat: ₹1,495</strong> (~17%)</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold transition-colors">Choose Plan</a>
+                </div>
+
+                <!-- Yearly (Popular) -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-primary shadow-2xl relative flex flex-col transform md:-translate-y-4 z-10">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-400 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-md whitespace-nowrap">
+                        Most Popular 🔥
+                    </div>
+                    <div class="text-center border-b border-slate-100 pb-8 mb-8 mt-2">
+                        <h3 class="text-xl font-semibold text-slate-600 mb-2">Yearly</h3>
+                        <div class="flex items-baseline justify-center gap-1">
+                            <span class="text-5xl font-display font-extrabold text-secondary">₹1,166</span>
+                            <span class="text-slate-500 font-medium">/mo</span>
+                        </div>
+                        <p class="text-primary font-medium mt-2">12 Months</p>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <span>Total Amount: <strong class="text-secondary">₹13,999</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <span>Unlimited Small Updates</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <i class="fa-solid fa-star text-warning mt-1"></i>
+                            <span><strong class="text-secondary">Aapki Bachat: ₹3,989</strong> (~22%)</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-primary hover:bg-primaryHover text-white py-4 rounded-xl font-bold transition-colors shadow-lg hover:shadow-xl">Choose Yearly</a>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-indigo-50 border border-indigo-100 rounded-2xl p-6 md:p-8 text-center max-w-4xl mx-auto">
+                <p class="text-indigo-900 md:text-lg"><em>Example: Agar aap har mahine ₹1,499 dete rahein, saal ka total = ₹17,988. Yearly plan ek saath lene par sirf ₹13,999 – seedha <strong class="font-bold text-primary">₹3,989 ki bachat!</strong></em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Accordion -->
+    <section id="terms" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-secondary mb-4">Important Terms 📌</h2>
+                <p class="text-lg text-slate-500">Transparent & Safe for You</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Accordion Item 1 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+                    <button class="accordion-header w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-slate-50 transition-colors">
+                        <span class="font-semibold text-lg text-secondary">Domain Ownership</span>
+                        <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-slate-50">
+                        <div class="p-6 pt-0 text-slate-600 border-t border-slate-100 mt-2">
+                            Domain Mara naam par register hoga (ya aap apna existing domain use kar sakte hain). Renewal plan ke saath automatic hogi.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+                    <button class="accordion-header w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-slate-50 transition-colors">
+                        <span class="font-semibold text-lg text-secondary">Plan Start & Upgrade</span>
+                        <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-slate-50">
+                        <div class="p-6 pt-0 text-slate-600 border-t border-slate-100 mt-2">
+                            Plan tab se start hoga jab website live ho jaaye. Beech mein bhi higher plan mein shift kar sakte hain (remaining amount adjust hoga).
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+                    <button class="accordion-header w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-slate-50 transition-colors">
+                        <span class="font-semibold text-lg text-secondary">Plan Expiry & Website Down</span>
+                        <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-slate-50">
+                        <div class="p-6 pt-0 text-slate-600 border-t border-slate-100 mt-2">
+                            Agar plan khatam ho jaaye aur renew nahi karte, to website 7 din ki grace period ke baad temporarily off kar di jayegi. Koi daily extra charge nahi lagega. Baad mein renew karne par ek nominal reactivation fee (₹200) dekar website wapas live ki ja sakti hai.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 4 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+                    <button class="accordion-header w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-slate-50 transition-colors">
+                        <span class="font-semibold text-lg text-secondary">Data & Backup</span>
+                        <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-slate-50">
+                        <div class="p-6 pt-0 text-slate-600 border-t border-slate-100 mt-2">
+                            Aapka content aur code ki backup mere paas secure rahegi. Aap kisi bhi time apni website files le sakte hain but extra paya karna ho ga file ka.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Start & Contact -->
+    <section id="contact" class="py-20 md:py-28">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-primary to-indigo-900 rounded-3xl p-8 md:p-16 text-center text-white shadow-2xl relative overflow-hidden">
+                <!-- BG Elements -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -ml-20 -mb-20"></div>
+                
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-12 relative z-10">Shuru Kaise Karein 🚀</h2>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 mb-16 relative z-10">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur border border-white/30 rounded-full flex items-center justify-center font-display text-lg sm:text-xl font-bold mb-3">1</div>
+                        <p class="text-indigo-100 font-medium text-sm">Select Plan<br><span class="text-xs opacity-80">(Recommended: Yearly)</span></p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur border border-white/30 rounded-full flex items-center justify-center font-display text-lg sm:text-xl font-bold mb-3">2</div>
+                        <p class="text-indigo-100 font-medium text-sm">50% Advance<br><span class="text-xs opacity-80">(UPI / Bank)</span></p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur border border-white/30 rounded-full flex items-center justify-center font-display text-lg sm:text-xl font-bold mb-3">3</div>
+                        <p class="text-indigo-100 font-medium text-sm">Send detail</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur border border-white/30 rounded-full flex items-center justify-center font-display text-lg sm:text-xl font-bold mb-3">4</div>
+                        <p class="text-indigo-100 font-medium text-sm">Check website</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur border border-white/30 rounded-full flex items-center justify-center font-display text-lg sm:text-xl font-bold mb-3">5</div>
+                        <p class="text-indigo-100 font-medium text-sm">Website Live<br><span class="text-xs opacity-80">(In 1-2 days)</span></p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur border border-white/30 rounded-full flex items-center justify-center font-display text-lg sm:text-xl font-bold mb-3">6</div>
+                        <p class="text-indigo-100 font-medium text-sm">Balance Payment<br><span class="text-xs opacity-80">(After live)</span></p>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/20 pt-10 relative z-10">
+                    <p class="text-lg md:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">Koi custom requirement (logo, specific color, extra service) zaroor batayein — uske mutabik alag se quote mil jayega.</p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="https://wa.me/919582113764" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp Me
+                        </a>
+                        <a href="mailto:Truegrieleaf@gmail.com" class="w-full sm:w-auto bg-transparent border-2 border-white/50 hover:bg-white hover:text-primary text-white px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-envelope text-xl"></i> Email Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-slate-400 py-12 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="mb-4">&copy; 2026 Truegridelaf. All rights reserved.</p>
+            <div class="flex justify-center gap-6">
+                <a href="https://www.facebook.com/people/Truegridleaf/61586823037344/" target="_blank" class="text-[#1877F2] hover:opacity-80 transition-opacity transform hover:scale-110"><i class="fa-brands fa-facebook text-3xl"></i></a>
+                <a href="https://www.instagram.com/truegrid_leaf/?hl=en" target="_blank" class="text-[#E1306C] hover:opacity-80 transition-opacity transform hover:scale-110"><i class="fa-brands fa-instagram text-3xl"></i></a>
+                <a href="https://x.com/Truegrid_Leaf" target="_blank" class="text-white hover:opacity-80 transition-opacity transform hover:scale-110"><i class="fa-brands fa-x-twitter text-3xl"></i></a>
+                <a href="https://t.me/TruegridLeaf" target="_blank" class="text-[#2AABEE] hover:opacity-80 transition-opacity transform hover:scale-110"><i class="fa-brands fa-telegram text-3xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button (Mobile & Desktop) -->
+    <a href="https://wa.me/919582113764" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#128C7E] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
